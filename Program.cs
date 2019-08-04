@@ -32,7 +32,22 @@ namespace Exception_Factorial
     {
         static void Main(string[] args)
         {
+            try
+            {
+                for (int i = 6; i < -6; i--)
+                {
+                    int factorial = MyMathFunctions.Factorial(i);
 
+                    Console.WriteLine("i = {0}, factorial = {1}", i, factorial);
+                }
+            }
+            catch(ArgumentException e)
+            {
+                Console.WriteLine("Fatal Error: ");
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Press Enter to terminate...");
+                Console.Read();
+            }
         }
     }
 }
